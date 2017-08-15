@@ -7,7 +7,7 @@ pipeline {
   jdk "jdk1.8.0_05"
   }
   // start of stages : build, test, deploy ...
-  
+  stages{
     stage('deploy') {
       // define step to run
       steps {
@@ -15,5 +15,6 @@ pipeline {
         // copy war file from build target to webapp Tomcat folder
         bat 'xcopy /y C:\\Program Files (x86)\\windows_slave\\workspace\\GOL_pipeline\\gameoflife-web\\target\\gameoflife.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 7.0\\webapps"'
         //invoke command to start tomcat service       
+  }
   }
 }
